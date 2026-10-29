@@ -14,6 +14,13 @@ ROADMAP row.
 - A **change** (bug, small feature, refactor) enters at step 4 and exits
   at step 7. A **new module** runs 1→9.
 
+## Feature requests during a build
+
+Append one line to `docs/deferred.md` tagged `feature`, keep building.
+At `/close`, David triages: small (fits existing code) = steps 4 to 7
+on its own branch; big (new module or changes a merged contract) = back
+to step 3. Only David may interrupt a running build.
+
 ## 1. Planning (C4 C1/C2)
 
 **Who:** me, with the agent asking questions. **What:** system context
@@ -45,9 +52,9 @@ Each module gets a C3 box in `docs/workspace.dsl`. **Exit:**
 `//!` comments, every module has a C3 box. Ends with the skeleton and
 the owner column filled (default `delegated`). **Tool:** run
 `superpowers:brainstorming` (skip if the SRS is complete enough), then
-`superpowers:writing-plans`. Output: `docs/plans/<module>.md` with ID'd
-tasks. This file is the task list for steps 5 to 7. Profile `toy`: skip
-and say so.
+`superpowers:writing-plans`. Output: `docs/plans/<module>.md` with
+tasks numbered `<module>-NN`. This file is the task list for steps 5 to
+7. Profile `toy`: skip and say so.
 
 ## 4. Contract (pub stubs + test names, todo!() bodies)
 
@@ -66,7 +73,9 @@ warns on `todo!()`: expected until step 5 ends. **Tool:** `/contract`,
 ## 5. Build
 
 **Entry:** run `/mode` if the row has no mode; otherwise use the row.
-Then 5a or 5b by owner.
+Then 5a or 5b by owner. Commit per task, message starts with the task
+ID (`shape-03: ...`). Step 9 changes use the issue number (`#42: ...`)
+as the ID.
 
 ## 5a. Build mine (pair)
 
@@ -97,6 +106,13 @@ item against the module's SRS section and its C4 box, and writes a
 short report: pass/fail per item, every `// DECISION:` listed, every
 deferral listed, pub diff shown. I read the report and the pub surface.
 Five minutes, no more; if it needs longer, the report is the problem.
+Review output has two kinds. Unmet requirement (has an SRS ID): go back
+to step 5, fix, review again, no question. Observation without an SRS
+ID: one line in `docs/deferred.md`, not fixed. Round cap per profile:
+`toy` 1, `poc` 2, `serious` 3. After the cap, remaining unmet
+requirements go to `deferred.md` tagged `unmet`, status row =
+`needs David`, and the module goes to David's review as is. A time box
+in the SRS overrides the cap.
 **Exit:** I say "merge", or I send it back to step 4 or 5 with one line
 on why. **Tool:** `superpowers:requesting-code-review`, `QA.md`.
 

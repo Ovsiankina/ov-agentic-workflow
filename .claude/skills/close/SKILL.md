@@ -18,6 +18,8 @@ given.
    - `branch` → the current branch name, if the column is empty
 3. Append to `docs/deferred.md` every deferral raised during the step
    that is not already there. One row each, status `open`.
+   Tick the tasks in `docs/plans/<module>.md` whose IDs appear in
+   commits since the last close.
 4. Append one line to `docs/learnings.md`: date, module, step, one
    sentence on what to do differently next time. One line, not a
    paragraph. If there is nothing to learn, write `nothing new`.

@@ -40,7 +40,7 @@ pass/fail and, for `[reviewer]` items, one line of evidence.
       listed in the report. Every deferral raised in this task is in
       `docs/deferred.md` with its smallest unblocking change.
 - [ ] `[reviewer]` `[poc, serious]` Plan file `docs/plans/<module>.md`
-      exists and every task is ticked or deferred.
+      exists and every task is ticked or in `docs/deferred.md`.
 
 ## Boundaries
 
