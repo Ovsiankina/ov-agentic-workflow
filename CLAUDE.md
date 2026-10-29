@@ -16,7 +16,20 @@ iteration order, private struct. Mark each one where it happens:
 
     // DECISION: <one line: what was chosen and why>
 
-**Forbidden, defer instead:**
+Bookkeeping is never a question: status rows, doc moves, Cargo
+scaffold, folder cleanup, copying templates. Do it and mention it in
+one line.
+
+Defaults you state and continue with, asking only if the user objects:
+owner = `delegated`, mode = `loop`.
+
+If a backgrounded agent's report was already summarized, say nothing
+when it finishes.
+
+**Decisions you don't take alone** (not things forbidden in the
+codebase): pub API, data layout, new deps, new `unsafe`, modules marked
+`mine`. If the task needs one, write it to `docs/deferred.md` and
+continue.
 
 - anything `pub`: signature, visibility, new item, re-export, trait impl
   on a pub type

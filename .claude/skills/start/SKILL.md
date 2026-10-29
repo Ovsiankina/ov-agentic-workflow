@@ -7,17 +7,11 @@ description: Open a cycle session. Reads workflows/cycle/ROADMAP.md, says which 
 
 1. Read `workflows/cycle/ROADMAP.md`. If it is missing, say so and stop:
    this project has not adopted the workflow yet.
-2. Read the status table. One line per row:
-   `<module> · owner <mine|delegated> · mode <mode|unset> · step <n> · <branch> · oracle <last run>`
-   Rows with `needs contract rework` come first.
-3. Say which module is next, using the dependency rule in ROADMAP: a
-   module enters step 4 only when all its dependencies are at step 4 or
-   later. Name the blocker if a module is waiting.
-4. For every row whose mode is unset and whose step is 4 or 5, invoke
+2. Say which module is at which step. Then list only what blocks the
+   current step, one line each. Nothing else.
+3. For every row whose mode is unset and whose step is 4 or 5, invoke
    the `mode` skill for that module. One module at a time.
-5. Read `workflows/cycle/PROCEDURE.md` for the next module's step and
-   state its exit test in one line.
-6. Stop. Do not start building. Wait for the user to pick a module.
+4. Stop. Do not start building. Wait for the user to pick a module.
 
 Rules:
 

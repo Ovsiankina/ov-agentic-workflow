@@ -27,6 +27,10 @@ module it depends on is at step 4 or later.
 
 ## Status
 
+`profile: toy | poc | serious` — serious = full `QA.md`; poc = oracle
+items only; toy = build + run only. `docs/srs.md` non-functional section
+overrides `QA.md`.
+
 | module | owner | mode | step | branch | last oracle run |
 |---|---|---|---|---|---|
 | _example_ | mine · delegated | draft · pair · loop · unset | 1–9 · `needs contract rework` | `mod/<name>` | `2026-10-29 green` |

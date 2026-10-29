@@ -42,19 +42,28 @@ every module as an empty file with a `//!` doc comment stating its
 responsibility and dependencies, wired with `mod` lines, compiling.
 Each module gets a C3 box in `docs/workspace.dsl`. **Exit:**
 `cargo build` green on the skeleton, dependency order readable from the
-`//!` comments, every module has a C3 box. **Tool:**
+`//!` comments, every module has a C3 box. Ends with the skeleton and
+the owner column filled (default `delegated`). **Tool:**
 `superpowers:writing-plans`.
 
 ## 4. Contract (pub stubs + test names, todo!() bodies)
 
-**Who:** agent via `/contract`, I sign off. **What:** for one module,
-from its SRS section: every `pub` item with full signature and `///` doc
+**Who:** agent via `/contract`, I sign off. **Contract** = what the
+compiler can check at the module boundary. Lib crate: pub API + test
+names. Bin crate: internal signatures + struct layouts. If profile is
+`toy`, or the SRS says no tests, say "step 4 folded into 5" and
+continue. **What:** for one module, from its SRS section: every `pub` item with full signature and `///` doc
 comment, body `todo!()`; hot structs `#[repr(C)]` with a `size_of` test;
 one `#[test]` per requirement, named after it, body `todo!()`. Nothing
 private, nothing implemented. **Exit:** `cargo build` green,
 `cargo test` compiles, I have read the pub surface and said yes. Clippy
 warns on `todo!()`: expected until step 5 ends. **Tool:** `/contract`,
 `/mode`.
+
+## 5. Build
+
+**Entry:** run `/mode` if the row has no mode; otherwise use the row.
+Then 5a or 5b by owner.
 
 ## 5a. Build mine (pair)
 
