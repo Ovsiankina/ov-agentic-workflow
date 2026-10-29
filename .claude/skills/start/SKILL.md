@@ -11,7 +11,10 @@ description: Open a cycle session. Reads workflows/cycle/ROADMAP.md, says which 
    current step, one line each. Nothing else.
 3. For every row whose mode is unset and whose step is 4 or 5, invoke
    the `mode` skill for that module. One module at a time.
-4. Stop. Do not start building. Wait for the user to pick a module.
+4. Before step 5, if no plan file `docs/plans/<module>.md` exists for
+   this module and profile isn't `toy`, run `superpowers:writing-plans`
+   first; don't ask.
+5. Stop. Do not start building. Wait for the user to pick a module.
 
 Rules:
 

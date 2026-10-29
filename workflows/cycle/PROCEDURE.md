@@ -43,8 +43,11 @@ responsibility and dependencies, wired with `mod` lines, compiling.
 Each module gets a C3 box in `docs/workspace.dsl`. **Exit:**
 `cargo build` green on the skeleton, dependency order readable from the
 `//!` comments, every module has a C3 box. Ends with the skeleton and
-the owner column filled (default `delegated`). **Tool:**
-`superpowers:writing-plans`.
+the owner column filled (default `delegated`). **Tool:** run
+`superpowers:brainstorming` (skip if the SRS is complete enough), then
+`superpowers:writing-plans`. Output: `docs/plans/<module>.md` with ID'd
+tasks. This file is the task list for steps 5 to 7. Profile `toy`: skip
+and say so.
 
 ## 4. Contract (pub stubs + test names, todo!() bodies)
 

@@ -39,6 +39,8 @@ pass/fail and, for `[reviewer]` items, one line of evidence.
 - [ ] `[reviewer]` `[poc, serious]` Every `// DECISION:` comment added in this task is
       listed in the report. Every deferral raised in this task is in
       `docs/deferred.md` with its smallest unblocking change.
+- [ ] `[reviewer]` `[poc, serious]` Plan file `docs/plans/<module>.md`
+      exists and every task is ticked or deferred.
 
 ## Boundaries
 
