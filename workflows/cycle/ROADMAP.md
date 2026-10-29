@@ -7,7 +7,7 @@
 - Claude Code `/goal` for loop mode: the agent runs against the oracle
   until green, no questions, under `CLAUDE.md`.
 - Project skills in `.claude/skills/`: `/start`, `/contract`, `/close`,
-  `/mode`.
+  `/mode`, `/issue`.
 - Oracle = the `[oracle]` items in `QA.md`: `cargo test`, `cargo clippy`,
   pub diff. Reviewer = the `[reviewer]` items, read by the review agent
   at step 6.

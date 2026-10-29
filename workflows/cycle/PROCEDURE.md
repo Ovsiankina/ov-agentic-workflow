@@ -16,7 +16,8 @@ ROADMAP row.
 
 ## Feature requests during a build
 
-Append one line to `docs/deferred.md` tagged `feature`, keep building.
+`/issue feature <text>`: one line in `docs/deferred.md`, a GitHub issue
+if there is a remote, keep building. Same for `bug` and `question`.
 At `/close`, David triages: small (fits existing code) = steps 4 to 7
 on its own branch; big (new module or changes a merged contract) = back
 to step 3. Only David may interrupt a running build.
@@ -139,4 +140,4 @@ use goes into `docs/deferred.md` with a module name and a step. Each one
 re-enters the cycle as a change at step 4: contract if the pub surface
 moves, straight to 5 if not. **Exit:** `docs/deferred.md` has no
 untriaged entry; every open entry has a module and a step. **Tool:**
-`/start`, `/contract`.
+`/issue`, `/start`, `/contract`.
